@@ -1,10 +1,7 @@
 class MathTools 
 {
 	static precision = 0.00001;
-	static isEqual(n1, n2) 				        {return Math.abs(n1 - n2) <= this.precision}
-	static isLessThanOrEqualTo(n1, n2) 	  {return n1 - n2 <= this.precision}
-	static isGreaterThanOrEqualTo(n1, n2) {return n1 - n2 >= -this.precision}
-
+	
 	/**
 	 * Determines if given point is lying on the given line.
 	 * @param point {Array} - point in format [lng, lat]
@@ -320,7 +317,9 @@ class MathTools
 			return {x: 0, y: 1}
 		return {x: "lng", y: "lat"}
 	}
-
+	static isEqual(n1, n2) {return Math.abs(n1 - n2) <= this.precision}
+	static isLessThanOrEqualTo(n1, n2) {return n1 - n2 <= this.precision}
+	static isGreaterThanOrEqualTo(n1, n2) {return n1 - n2 >= -this.precision}
 	/**
 	 * Wraps lng2 to lng1
 	 * @param lng1 {number} Anchor lng
